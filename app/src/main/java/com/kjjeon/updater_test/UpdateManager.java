@@ -25,6 +25,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.AtomicDouble;
 import com.kjjeon.updater_test.dummy.UpdateEngine;
 import com.kjjeon.updater_test.dummy.UpdateEngineCallback;
+import com.kjjeon.updater_test.service.PrepareUpdateService;
 import com.kjjeon.updater_test.util.UpdateEngineErrorCodes;
 import com.kjjeon.updater_test.util.UpdateEngineProperties;
 
@@ -298,17 +299,17 @@ public class UpdateManager {
         }
 
         Log.d(TAG, "Starting PrepareUpdateService");
-//        PrepareUpdateService.startService(context, config, mHandler, (code, payloadSpec) -> {
-//            if (code != PrepareUpdateService.RESULT_CODE_SUCCESS) {
-//                Log.e(TAG, "PrepareUpdateService failed, result code is " + code);
-//                setUpdaterStateSilent(UpdaterState.ERROR);
-//                return;
-//            }
-//            updateEngineApplyPayload(UpdateData.builder()
-//                    .setExtraProperties(prepareExtraProperties(config))
-//                    .setPayload(payloadSpec)
-//                    .build());
-//        });
+        PrepareUpdateService.startService(context, config, mHandler, (code, payloadSpec) -> {
+            if (code != PrepareUpdateService.RESULT_CODE_SUCCESS) {
+                Log.e(TAG, "PrepareUpdateService failed, result code is " + code);
+                setUpdaterStateSilent(UpdaterState.ERROR);
+                return;
+            }
+            updateEngineApplyPayload(UpdateData.builder()
+                    .setExtraProperties(prepareExtraProperties(config))
+                    .setPayload(payloadSpec)
+                    .build());
+        });
     }
 
     private List<String> prepareExtraProperties(UpdateConfig config) {

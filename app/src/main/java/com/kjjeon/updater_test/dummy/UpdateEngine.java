@@ -150,4 +150,8 @@ public class UpdateEngine {
     public void resetStatus() {
 
     }
+
+    public boolean verifyPayloadMetadata(String payloadMetadataFilename) {
+        return true;
+    }
 }

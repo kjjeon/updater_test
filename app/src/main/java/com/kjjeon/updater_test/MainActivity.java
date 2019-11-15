@@ -307,7 +307,9 @@ public class MainActivity extends Activity {
         mProgressBar.setProgress((int) (100 * progress));
     }
 
-    /** resets ui */
+    /**
+     * resets ui
+     */
     private void uiResetWidgets() {
 
         mTextViewBuild.setText(Build.DISPLAY);
