@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.kjjeon.updater_test;
+package com.kjjeon.updater_test.core;
 
 
 import java.io.Serializable;

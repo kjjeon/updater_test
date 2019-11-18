@@ -17,7 +17,7 @@
 package com.kjjeon.updater_test.util;
 
 
-import com.kjjeon.updater_test.PayloadSpec;
+import com.kjjeon.updater_test.core.PayloadSpec;
 
 import java.io.BufferedReader;
 import java.io.File;

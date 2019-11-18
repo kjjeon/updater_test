@@ -20,7 +20,7 @@ import android.content.Context;
 import android.util.Log;
 
 
-import com.kjjeon.updater_test.UpdateConfig;
+import com.kjjeon.updater_test.core.UpdateConfig;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;

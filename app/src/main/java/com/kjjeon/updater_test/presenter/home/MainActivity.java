@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.kjjeon.updater_test;
+package com.kjjeon.updater_test.presenter.home;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -31,6 +31,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
+import com.kjjeon.updater_test.R;
+import com.kjjeon.updater_test.core.UpdateConfig;
+import com.kjjeon.updater_test.core.UpdateManager;
+import com.kjjeon.updater_test.core.UpdaterState;
 import com.kjjeon.updater_test.dummy.UpdateEngine;
 import com.kjjeon.updater_test.util.UpdateConfigs;
 import com.kjjeon.updater_test.util.UpdateEngineErrorCodes;

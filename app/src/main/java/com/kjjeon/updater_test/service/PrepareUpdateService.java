@@ -25,8 +25,9 @@ import android.os.ResultReceiver;
 import android.util.Log;
 
 import com.google.common.collect.ImmutableSet;
-import com.kjjeon.updater_test.PayloadSpec;
-import com.kjjeon.updater_test.UpdateConfig;
+import com.kjjeon.updater_test.core.PayloadSpec;
+import com.kjjeon.updater_test.core.UpdateConfig;
+import com.kjjeon.updater_test.dummy.RecoverySystem;
 import com.kjjeon.updater_test.dummy.UpdateEngine;
 import com.kjjeon.updater_test.util.FileDownloader;
 import com.kjjeon.updater_test.util.PackageFiles;
@@ -261,14 +262,12 @@ public class PrepareUpdateService extends IntentService {
      * @return true if OTA package is compatible with this device
      */
     private boolean verifyPackageCompatibility(File file) {
-        //TODO : remove test code
-        return true;
-//        try {
-//            return RecoverySystem.verifyPackageCompatibility(file);
-//        } catch (IOException e) {
-//            Log.e(TAG, "Failed to verify package compatibility", e);
-//            return false;
-//        }
+        try {
+            return RecoverySystem.verifyPackageCompatibility(file);
+        } catch (IOException e) {
+            Log.e(TAG, "Failed to verify package compatibility", e);
+            return false;
+        }
     }
 
     /**
